@@ -1,14 +1,11 @@
 # -*- coding: utf-8 -*-
 {
     'license': 'LGPL-3',
-    'name': "Document Management System",
-    'summary': "Enterprise online document management",
-    'author': "renjie <i@renjie.me>",
-    'website': "https://renjie.me",
-    'support': 'i@renjie.me',
-    'category': 'Document Management',
+    'name': "PDF Reader",
+    'summary': "Let an user see PDF archives",
+    'category': 'Productivity',
     'version': '1.0',
-    'depends': ['mail'],
+    'depends': ['base_setup','mail'],
     'data': [
         'security/account_security.xml',
         'security/ir.model.access.csv',
