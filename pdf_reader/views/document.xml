@@ -3,9 +3,9 @@
     <data>
 
         <record id="action_document_open" model="ir.actions.act_window">
-            <field name="name">Documents</field>
+            <field name="name">PDF Reader</field>
             <field name="res_model">document.document</field>
-            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_mode">kanban,form</field>
             <field name="domain">[]</field>
         </record>
 
@@ -15,31 +15,10 @@
             <field name="arch" type="xml">
                 <search>
                     <field name="name"/>
-                    <field name="parent_id"/>
-                    <filter name="filter_is_root" string="Root" domain="[('parent_id', '=', False)]"/>
-                    <group>
-                        <filter name="group_by_parent_id" string="Parent" context="{'group_by': 'parent_id'}"/>
-                    </group>
                 </search>
             </field>
         </record>
 
-        <record id="view_document_tree" model="ir.ui.view">
-            <field name="name">Document Tree</field>
-            <field name="model">document.document</field>
-            <field name="arch" type="xml">
-                <tree>
-                    <field name="sequence" widget="handle"/>
-                    <field name="name"/>
-                    <field name="parent_full_name" invisible="'default_parent_id' in context"/>
-                    <field name="child_count"/>
-                    <field name="create_uid"/>
-                    <field name="create_date"/>
-                    <field name="write_uid"/>
-                    <field name="write_date"/>
-                </tree>
-            </field>
-        </record>
 
         <record id="view_document_kanban" model="ir.ui.view">
             <field name="name">Document Kanban</field>
@@ -51,7 +30,6 @@
                     <field name="name"/>
                     <field name="description"/>
                     <field name="write_date"/>
-                    <field name="child_count"/>
                     <templates>
                         <t t-name="kanban-box">
                             <div t-attf-class="#{kanban_color(record.color.raw_value)}">
@@ -69,8 +47,7 @@
                                 </div>
                                 <div t-attf-class="oe_kanban_content">
                                     <div class="o_kanban_image">
-                                        <a type="object" name="action" t-attf-data-context="{'module_action_id': 'document_management_system.action_document_open', 'search_default_parent_id': {{record.id.raw_value}}, 'default_parent_id': {{record.id.raw_value}}}" title="Child" role="button">
-                                            <span class="badge badge-dark"><t t-esc="record.child_count.raw_value || ''"/></span>
+                                        <a type="object" name="action" t-attf-data-context="{'module_action_id': 'document_management_system.action_document_open'" title="Child" role="button">
                                             <img src="/document_management_system/static/description/document.png" alt="icon"/>
                                         </a>
                                     </div>
@@ -113,16 +90,6 @@
                         <label for="content" class="oe_edit_only"/>
                         <field name="content"/>
                         <separator/>
-                        <label for="child_ids" class="oe_edit_only"/>
-                        <field name="child_ids" context="{'default_parent_id': id}"/>
-                        <group>
-                            <group>
-                                <field name="parent_id" options="{'no_create': True}" domain="[('id', '!=', id)]" context="{'display_full_name': True}"/>
-                            </group>
-                            <group>
-                                <field name="parent_full_name"/>
-                            </group>
-                        </group>
                         <group>
                             <group>
                                 <field name="create_uid" readonly="1"/>
@@ -144,9 +111,9 @@
         </record>
 
         <record id="action_document_main" model="ir.actions.act_window">
-            <field name="name">Documents</field>
+            <field name="name">PDF Reader</field>
             <field name="res_model">document.document</field>
-            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_mode">kanban,form</field>
             <field name="domain">[]</field>
             <field name="context" eval="{'search_default_filter_is_root':1}"/>
         </record>
