@@ -21,7 +21,7 @@ class Document(models.Model):
     name = fields.Char('Name', required=True)
     full_name = fields.Char('Full Name', compute='_compute_full_name')
     description = fields.Char('Description')
-    content = fields.Html('Content')
+    test_binary = fields.Binary(string='Upload')
     
 
 

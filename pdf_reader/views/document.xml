@@ -87,8 +87,8 @@
                         <label for="description" class="oe_edit_only"/>
                         <field name="description"/>
                         <separator/>
-                        <label for="content" class="oe_edit_only"/>
-                        <field name="content"/>
+                        <label for="test_binary" class="oe_edit_only"/>
+                        <field name="test_binary" filename="name" widget='pdf_viewer'/>
                         <separator/>
                         <group>
                             <group>
