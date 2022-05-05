@@ -48,7 +48,7 @@
                                 <div t-attf-class="oe_kanban_content">
                                     <div class="o_kanban_image">
                                         <a type="open" t-att-title="record.name.value" title="Archivo" role="button">
-                                            <img src="..\static\description\pepo.png" alt="icon"/>
+                                            <img src="pdf_reader/static/description/book.png" alt="icon"/>
                                         </a>
                                     </div>
                                     <div class="oe_kanban_details">
@@ -118,7 +118,7 @@
             <field name="context" eval="{'search_default_filter_is_root':1}"/>
         </record>
 
-        <menuitem id="menu_documents" sequence="4" groups="group_document_user" action="action_document_main" web_icon="static/description/pepo.png"/>
+        <menuitem id="menu_documents" sequence="4" groups="group_document_user" action="action_document_main" web_icon="pdf_reader/static/description/book.png"/>
 
     </data>
 </odoo>
