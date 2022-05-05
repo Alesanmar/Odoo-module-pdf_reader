@@ -8,7 +8,7 @@ from odoo.exceptions import UserError, ValidationError
 _logger = logging.getLogger(__name__)
 
 
-class PDF(models.Model):
+class Document(models.Model):
     _name = "document.document"
     _description = 'Document'
     _order = 'sequence,id'
