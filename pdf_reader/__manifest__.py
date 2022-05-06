@@ -1,4 +1,13 @@
 # -*- coding: utf-8 -*-
+#############################################################################
+#
+#   Proyect of Seville University.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+#
+#############################################################################
 {
     'license': 'LGPL-3',
     'name': "PDF Reader",
