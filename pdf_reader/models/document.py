@@ -24,22 +24,6 @@ class Document(models.Model):
     test_binary = fields.Binary(string='Upload')
     
 
-
-
-    # def name_get(self):
-        # if self.env.context.get('display_full_name', False):
-        #     pass
-        # else:
-        #     return super(Document, self).name_get()
-        # def get_names(record):
-        #     res = []
-        #     while record:
-        #         res.append(record.name or '')
-        #         record = record.parent_id
-        #     return res
-        # return [(record.id, " / ".join(reversed(get_names(record)))) for record in self]
-    #
-
     def _compute_full_name(self):
         res_dict = dict(self.with_context({'display_full_name': True}).name_get())
         for record in self:
